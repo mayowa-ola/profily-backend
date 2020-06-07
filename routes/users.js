@@ -8,7 +8,7 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const moment = require("moment");
 const passport = require('passport');
-const upload = require('multer');
+const multer = require('multer');
 const cloudinary = require('cloudinary');
 const jwt = require('jsonwebtoken');
 
