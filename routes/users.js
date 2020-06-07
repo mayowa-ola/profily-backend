@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 });
 //Middlewares
 const asyncMiddleware = require("../middleware/async");
-// const upload = multer({storage: storage});
+const upload = multer({storage: storage});
 
 //Models
 const {User,validate} = require('../models/Users');
