@@ -1,0 +1,10 @@
+{
+    "db": "prodigy_db",
+    "jwtPrivateKey": "profily_jwtPrivateKey",
+    "CLIENTDOMAIN" : "profily_CLIENTDOMAIN",
+    "CLOUDINARY_DOMAIN" : "profily_CLOUDINARY_DOMAIN",
+    "CLOUDINARY_API_KEY" : "profily_CLOUDINARY_API_KEY",
+    "CLOUDINARY_API_SECRET" : "profily_CLOUDINARY_API_SECRET",
+    "GOOGLE_CLIENT_ID" : "profily_GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET" : "profily_GOOGLE_CLIENT_SECRET"
+}
