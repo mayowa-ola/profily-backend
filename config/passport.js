@@ -30,7 +30,7 @@ module.exports = function(passport) {
     })
   );
 
-  passport.use('goolge',new GoogleStrategy({
+  passport.use('google',new GoogleStrategy({
     clientID: config.get('GOOGLE_CLIENT_ID'),
     clientSecret: config.get('GOOGLE_CLIENT_SECRET'),
     callbackURL: `/auth/google/callback`
