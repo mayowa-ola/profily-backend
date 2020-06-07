@@ -8,7 +8,7 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const moment = require("moment");
 const passport = require('passport');
-const multer = require('multer');
+const upload = require('multer');
 const cloudinary = require('cloudinary');
 const jwt = require('jsonwebtoken');
 
@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 });
 //Middlewares
 const asyncMiddleware = require("../middleware/async");
-const upload = multer({storage: storage});
+// const upload = multer({storage: storage});
 
 //Models
 const {User,validate} = require('../models/Users');
