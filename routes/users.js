@@ -39,9 +39,7 @@ router.post('/login',
         const user = req.user;
         const jwtPrivateKey = config.get('jwtPrivateKey');
         const token = jwt.sign({_id: user._id, email: user.email, name: user.name, photos: user.photos}, jwtPrivateKey);
-        res.header('x-auth-token', token)
-            .header("access-control-expose-headers", "x-auth-token")
-            .send(user);
+        res.send(token);
  }
 );
 
@@ -62,9 +60,7 @@ router.get(
         // return res.status(200).json(req.user);
         const jwtPrivateKey = config.get('jwtPrivateKey');
         const token = jwt.sign({_id: user._id, email: user.email, name: user.name, photos: user.photos}, jwtPrivateKey);
-        res.header('x-auth-token', token)
-            .header("access-control-expose-headers", "x-auth-token")
-            .send(user);
+        res.send(token); 
  }
 );
 
@@ -92,6 +88,17 @@ router.get('/logout', asyncMiddleware(async(req,res) => {
     
     req.logout();
     res.send('Log out successfully');
+}));
+
+router.get("/:id", asyncMiddleware(async (req, res) => {
+  const user = await User.findById(req.params.id).select("-__v");
+  
+  if (!user)
+      return res
+      .status(404)
+      .send("The User with the given ID was not found.");
+  
+  res.send(user);
 }));
 
 router.put("/upload/:id", upload.array('photos', 100), asyncMiddleware(async (req, res) => {
